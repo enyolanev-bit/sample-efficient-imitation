@@ -64,6 +64,7 @@ def run_one(n_demos: int, recipe: str, seed: int, steps: int, eval_eps: int, dev
         PY, "-m", "lerobot.scripts.lerobot_train",
         "--dataset.repo_id=lerobot/pusht",
         f"--dataset.episodes={episodes_arg(n_demos)}",
+        "--dataset.video_backend=pyav",  # self-contained ffmpeg; avoids torchcodec/libavutil gaps on some nodes
         "--policy.type=act",
         f"--policy.device={device}",
         "--policy.push_to_hub=false",
