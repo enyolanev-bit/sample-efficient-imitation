@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-PY = str(HERE / ".venv/bin/python")
+PY = sys.executable  # use the interpreter that launched this script (venv or system)
 RUNS = HERE / "runs"
 
 # Recettes : la STANDARD = défauts ACT. ENHANCED = régularisation agressive.
